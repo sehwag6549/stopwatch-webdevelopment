@@ -1,33 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stopwatch</title>
-    <link rel="stylesheet" href="Style.css" />
-  </head>
-  <body>
-    <div id="timer">00:00:00:000</div>
-    <div id="controls">
-      <button onclick="startStop()">
-        <img src="./assets/play.png" width="30px" alt="" />
-        Start
-      </button>
-      <button onclick="pause()">
-        <img src="./assets/pause.png" width="30px" alt="" />
-        Pause
-      </button>
-      <button onclick="reset()">
-        <img src="./assets/reset.png" width="30px" alt="" />
-        Reset
-      </button>
-      <button onclick="lap()">
-        <img src="./assets/arrow.png" width="30px" alt="" />
-        Lap
-      </button>
-    </div>
-    <div id="lap-times"></div>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100svh;
+  width: 100%;
+}
+#timer {
+  font-size: 11vw;
+  margin: 20px;
+  text-shadow: 1px 1px 10px rgba(255, 238, 0, 0.798);
+}
+#controls {
+  display: flex;
+  gap: 4vw;
+  justify-content: center;
+}
+#lap-times {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2vw;
+  line-height: 4vw;
+}
+button {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  padding: 2vw 3vw;
+  font-size: 2vw;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 1px solid #e1ff002b;
+  color: aliceblue;
+  box-shadow: 5px 7px 20px -10px #e1ff00ab;
+}
+button:hover {
+  background-color: rgba(240, 255, 255, 0.133);
+}
+@media screen and (max-width: 768px) {
+  #timer {
+    font-size: 15vw;
+    margin: 20px;
+  }
+  #controls {
+    display: block;
+  }
+  button {
+    margin: 20px auto;
+    width: 8em;
+    height: 3em;
+    font-size: 22px;
+  }
+  #lap-times {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
